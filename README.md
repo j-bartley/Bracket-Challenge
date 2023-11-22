@@ -3,13 +3,13 @@
 The Bracket Challenge will take an input list of items, assign them random values, then assign them to a bracket structure. Once the structure is set, the bracket will weight the randomly assigned values against each other to determine a winner. At each round, a new list of the remaining winners is created and randomly assigned values again to ensure higher randomness. The rounds continue until there is a final winner.
 
 ## Bracket Format
-'''
+```
 Movie Name #1
 -------------------------
                          | Winning Movie
 -------------------------
 Movie Name #2
-'''
+```
 
 ## To-Do
 1. Create Array/List Import (Preferably Excel)
