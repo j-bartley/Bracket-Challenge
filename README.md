@@ -4,9 +4,9 @@ The Bracket Challenge will take an input list of items, assign them random value
 
 ## Bracket Format
 Movie Name #1
--------------------------
-                         | Winning Movie
--------------------------")
+/-------------------------
+/                         | Winning Movie
+/-------------------------
 Movie Name #2
 
 ## To-Do

@@ -17,16 +17,26 @@ import random
 
 #---Code---#
 # 1. Create Array/List Import (Preferably Excel)
+# 2. Create Array/List to hold names & values 
 # Using pre-created Array/List to start
-arrayTest = ["test", "test2", "test3"]
+arrayTest = ["Whoa", "Hey", "Odd", "Yo", "Anotha 1", "Wut", "Yee", "Skibidi"]
 arrayCount = len(arrayTest)
 iterator = 0
+# Shuffle Array/List
+random.shuffle(arrayTest)
+random.shuffle(arrayTest)
+random.shuffle(arrayTest)
+# 3. Randomly assign values to each name (Array/List item)
+# Loop through Array/List, compare values, select winner, place winner in new Array/List, remove loser & winner from original list
+winnerArray = []
 
-print(arrayTest)
-random.shuffle(arrayTest)
-random.shuffle(arrayTest)
-random.shuffle(arrayTest)
-
-while iterator <= arrayCount - 1:
-    print(arrayTest[iterator])
+while iterator < arrayCount - 1:
+    winnerArray.append(arrayTest[iterator+1])
+    arrayTest.pop(iterator)
+    arrayCount = len(arrayTest)
     iterator = iterator + 1
+
+print(winnerArray)
+# 11/21/23 - Left Off At Notes:
+# - The initial first round of brackets appears to be working great
+# - Need to implement this as a class/method so that it can be called independently of the amount of items
