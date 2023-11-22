@@ -15,6 +15,7 @@ Movie Name #2
 1. Clean up naming conventions
 2. Create handling for Corner Case
 3. Add more randomness on the individual bracket winner
+4. Add weighted values
 
 ## Corner Cases
 1. Problem: Odd Array/List count
