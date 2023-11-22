@@ -1,15 +1,11 @@
-#---Concept---#
-# The Bracket Challenge will take an input list of items, assign them random values, then assign them to a bracket structure.
-# Once the structure is set, the bracket will weight the randomly assigned values against each other to determine a winner.
-# At each round, a new list of the remaining winners is created and randomly assigned values again to ensure higher randomness.
-# The rounds continue until there is a final winner.
+import random
 
 #---Bracket Format---#
-print("Movie Name")
-print("-------------------------")
-print("                         |" + " Winning Movie")
-print("-------------------------")
-print("Movie Name")
+#print("Movie Name")
+#print("-------------------------")
+#print("                         |" + " Winning Movie")
+#print("-------------------------")
+#print("Movie Name")
 
 #---To-Do---#
 # 1. Create Array/List Import (Preferably Excel)
@@ -19,7 +15,18 @@ print("Movie Name")
 # 5. Compare values, determine winners
 # 6. Gather winners, go to step 2, exit after only 1 winner remaining
 
-#---Corner Cases---#
-# 1. Problem: Odd Array/List count
-#    Solution 1: Take one item out of list, assign random value, compare to final movie
-#    Solution 2: Reject Array/List for not being even
+#---Code---#
+# 1. Create Array/List Import (Preferably Excel)
+# Using pre-created Array/List to start
+arrayTest = ["test", "test2", "test3"]
+arrayCount = len(arrayTest)
+iterator = 0
+
+print(arrayTest)
+random.shuffle(arrayTest)
+random.shuffle(arrayTest)
+random.shuffle(arrayTest)
+
+while iterator <= arrayCount - 1:
+    print(arrayTest[iterator])
+    iterator = iterator + 1
