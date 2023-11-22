@@ -1,4 +1,5 @@
 import random
+from pyfiglet import Figlet
 
 #---Bracket Format---#
 #print("Movie Name")
@@ -6,37 +7,56 @@ import random
 #print("                         |" + " Winning Movie")
 #print("-------------------------")
 #print("Movie Name")
-
-#---To-Do---#
-# 1. Create Array/List Import (Preferably Excel)
-# 2. Create Array/List to hold names & values
-# 3. Randomly assign values to each name (Array/List item)
-# 4. Split Array/List into bracket format
-# 5. Compare values, determine winners
-# 6. Gather winners, go to step 2, exit after only 1 winner remaining
+#
+# Bracket Function
+def bracketRound(arrayTest, arrayCount):
+    iterator = 0
+    winnerArray = []
+    while iterator < arrayCount - 1:
+        match = Figlet(font='straight')
+        print(match.renderText("Match #" + str(iterator+1)))
+        winnerArray.append(arrayTest[iterator+1])
+        print(arrayTest[iterator])
+        print("-------------------------")
+        print("                         | " + arrayTest[iterator+1])
+        print("-------------------------")
+        print(arrayTest[iterator+1])
+        print("")
+        arrayTest.pop(iterator)
+        arrayCount = len(arrayTest)
+        iterator = iterator + 1
+    return(winnerArray)
 
 #---Code---#
-# 1. Create Array/List Import (Preferably Excel)
-# 2. Create Array/List to hold names & values 
+# TO-DO: Create Array/List Import (Add read .txt file, each newline is a new list item)
+file = open("movies.txt", "r")
+arrayPremade = file.readlines()
+print(arrayPremade)
+file.close()
+
+
 # Using pre-created Array/List to start
-arrayTest = ["Whoa", "Hey", "Odd", "Yo", "Anotha 1", "Wut", "Yee", "Skibidi"]
-arrayCount = len(arrayTest)
-iterator = 0
+#arrayPremade = ["Whoa", "Hey", "Odd", "Yo", "Anotha 1", "Wut", "Yee", "Skibidi"]
+arrayPremadeCount = len(arrayPremade)
+
 # Shuffle Array/List
-random.shuffle(arrayTest)
-random.shuffle(arrayTest)
-random.shuffle(arrayTest)
-# 3. Randomly assign values to each name (Array/List item)
+arrayPremade = random.sample(arrayPremade, len(arrayPremade))
+
 # Loop through Array/List, compare values, select winner, place winner in new Array/List, remove loser & winner from original list
-winnerArray = []
+roundCounter = 1
+while arrayPremadeCount > 1:
+    round = Figlet(font='stop')
+    print(round.renderText("ROUND # " + str(roundCounter)))
+    arrayPremade = bracketRound(arrayPremade, arrayPremadeCount)
+    arrayPremadeCount = len(arrayPremade)
+    arrayPremade = random.sample(arrayPremade, len(arrayPremade))
+    roundCounter = roundCounter+1
 
-while iterator < arrayCount - 1:
-    winnerArray.append(arrayTest[iterator+1])
-    arrayTest.pop(iterator)
-    arrayCount = len(arrayTest)
-    iterator = iterator + 1
+# Print Winner
+print("$------AND THE WINNER IS------$")
+print("")
+winner = Figlet(font='epic')
+print(winner.renderText(arrayPremade[0]))
+print("$-----------------------------$")
 
-print(winnerArray)
-# 11/21/23 - Left Off At Notes:
-# - The initial first round of brackets appears to be working great
-# - Need to implement this as a class/method so that it can be called independently of the amount of items
+
