@@ -12,7 +12,7 @@ Movie Name #2
 ```
 
 ## To-Do
-1. Create Array/List Import (Add read .txt file, each newline is a new list item)
+1. Clean up naming conventions
 2. Create handling for Corner Case
 3. Add more randomness on the individual bracket winner
 

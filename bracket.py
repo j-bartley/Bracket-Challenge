@@ -33,10 +33,6 @@ file = open("movies.txt", "r")
 arrayPremade = file.readlines()
 print(arrayPremade)
 file.close()
-
-
-# Using pre-created Array/List to start
-#arrayPremade = ["Whoa", "Hey", "Odd", "Yo", "Anotha 1", "Wut", "Yee", "Skibidi"]
 arrayPremadeCount = len(arrayPremade)
 
 # Shuffle Array/List
